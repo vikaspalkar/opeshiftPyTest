@@ -6,7 +6,7 @@ import os
 print("This is a simple Python MySQL Connectivity code")
 username = os.environ['MYSQL_USER']
 password = os.environ['MYSQL_ROOT_PASSWORD']
-print("Running with user: %s",% username)
+print("Running with user: ",username)
 # Open database connection
 
 db = MySQLdb.connect("172.30.88.85","username","password","sampledb" )
@@ -19,7 +19,7 @@ cursor.execute("SELECT VERSION()")
 
 # Fetch a single row using fetchone() method.
 data = cursor.fetchone()
-print ("Database version : %s " % data)
+print ("Database version : ", data)
 
 sql = "SELECT * FROM EMP;"
 try:
@@ -33,10 +33,9 @@ try:
       sal = row[2]
       
       # Now print fetched result
-      print "emp_id=%d,name=%s,sal=%s \
-             (emp_id, name, sal )
+      print (emp_id, name, sal )
 except:
-   print "Error: unable to fecth data"
+   print ("Error: unable to fecth data")
 
 
 # disconnect from server
