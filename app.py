@@ -6,7 +6,7 @@ import os
 print("This is a simple Python MySQL Connectivity code")
 username = os.environ['MYSQL_USER']
 password = os.environ['MYSQL_ROOT_PASSWORD']
-print("Running with user: %s" % username)
+print("Running with user: %s",% username)
 # Open database connection
 
 db = MySQLdb.connect("172.30.88.85","username","password","sampledb" )
@@ -19,7 +19,7 @@ cursor.execute("SELECT VERSION()")
 
 # Fetch a single row using fetchone() method.
 data = cursor.fetchone()
-print "Database version : %s " % data
+print ("Database version : %s " % data)
 
 sql = "SELECT * FROM EMP;"
 try:
